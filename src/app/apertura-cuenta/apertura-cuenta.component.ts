@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { ServicioApiService } from '../services/servicio-api.service';
 import { AñadirClienteModel } from '../interfaces/añadir-cliente.model';
 import { AñadirCuentaModel } from '../interfaces/añadir-cuenta.model';
+import { AñadirTarjetaModel } from '../interfaces/añadir-tarjeta.model';
 
 @Component({
   selector: 'app-apertura-cuenta',
@@ -27,6 +28,12 @@ export class AperturaCuentaComponent implements OnInit {
       rfc: [],
        id_cuentabancaria: [],
        codigo_cliente: [],
+       ccv: [],
+       numero_tarjeta:[],
+       saldo: [],
+       vigencia: [],
+       tipo_tarjeta:[]
+
 
     });
     
@@ -55,6 +62,14 @@ export class AperturaCuentaComponent implements OnInit {
 
 
        }
+       const tarjeta: AñadirTarjetaModel = {
+        ccv: info.ccv,
+        numero_tarjeta: info.numero_tarjeta,
+        saldo: info.saldo,
+        vigencia: info.vigencia,
+        tipo_tarjeta: info.tipo_tarjeta,
+        id_cuentabancaria: info.id_cuentabancaria,
+       }
 
       ;
       this.service.addCliente(cliente).subscribe(res =>{
@@ -64,6 +79,9 @@ export class AperturaCuentaComponent implements OnInit {
        this.service.abrirCuenta(cuenta).subscribe(res =>{
         console.log(res);
       });
+      this.service.crearTarjeta(tarjeta).subscribe(res=>{
+        console.log(res);
+      })
     }
   }
 

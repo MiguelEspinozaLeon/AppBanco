@@ -34,7 +34,7 @@ export class ServicioApiService {
      return this.http.post(this.url_abrircuenta,body,{responseType: 'text'});
    }
    public crearTarjeta(body: any){
-     return this.http.post(this.url_tarjetas, body);
+     return this.http.post(this.url_tarjetas, body,{responseType:'text'});
    }
    public postRetiro(body: any){
      return this.http.post(this.url_retiro, body, {responseType: 'text'});

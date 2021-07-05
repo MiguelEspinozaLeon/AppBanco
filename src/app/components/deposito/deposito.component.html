@@ -1,5 +1,5 @@
 <div class="container">
-    <form action="" style="width: 80%; margin-top: 20px;">
+    <form action="" style="width: 80%; margin-top: 20px;" [formGroup]="formulario" (ngSubmit)="guardarDeposito()">
         <div class="form-group mt-3">
             <div class="row">{{ date }}</div>
             <div class="row">{{ time | date: 'hh:mm:ss a' }}</div>
@@ -22,7 +22,7 @@
         </div>
 
         <div class="form-group mt-3">
-            <button type="button" class="btn btn-dark">Realizar transacción.</button>
+            <button type="submit" class="btn btn-dark">Realizar transacción.</button>
 
         </div>
 
