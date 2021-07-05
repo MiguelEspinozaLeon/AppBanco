@@ -12,8 +12,12 @@ import { DepositoComponent } from './components/deposito/deposito.component';
 import { TransferenciaComponent } from './components/transferencia/transferencia.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
+import { APP_BASE_HREF } from '@angular/common';
 
 @NgModule({
+  providers: [{ provide: APP_BASE_HREF, useValue: '' }],
+
+
   declarations: [
     AppComponent,
     NavbarComponent,
