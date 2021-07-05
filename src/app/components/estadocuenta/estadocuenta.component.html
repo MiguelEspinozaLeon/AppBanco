@@ -1,35 +1,100 @@
 <div class="container">
-    <h1>Estado de la cuenta: </h1>
-    <div class="card mx-auto" style="width: 60%;">
+
+    <!-- <div class="row mx-auto" style="width: 50%; text-align: center;margin-top: 30px; " >
+        <h4>Ingrese el numero de cuenta: </h4>
+        <input type="text" name="" id="" formControlName="numero_tarjeta">
+        <button (type="button" class="btn btn-dark">Obtener Estado de Cuenta</button>
+    </div> -->
+    <h1 style="margin-top: 20px;">Estado de la cuenta: </h1>
+    <div class="card mx-auto" style=" height: 100%;">
 
         <div class="card-body">
-            <div class="row">
-                <div class="col">
-                    <label for="">Nombre titular: </label>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <label for="">Saldo disponible: </label>
-                </div>
-            </div>
-            <div class="row" style="margin-top: 20px;">
-                <div class="col">
-                    <h3>Transacciones Realizadas</h3>
-                </div>
-            </div>
-            <div class="row">
-                <label for="">Id de transaccion</label>
-            </div>
-            <div class="row">
-                <label for="">Tipo de transaccion</label>
-            </div>
-            <div class="row">
-                <label for="">Monto de la transaccion</label>
-            </div>
-            <div class="row">
-                <label for="">Fecha</label>
-            </div>
+
+            
+                
+                    <div class="row">
+                        <div class="col">
+                            <label for="">Nombre titular: </label>
+                        </div>
+                    </div>
+
+               
+                
+                    <div class="row">
+                        <div class="col">
+                            <label for="">Saldo disponible: </label>
+                        </div>
+                    </div>
+
+              
+                
+                    <div class="row" style="margin-top: 20px;">
+                        <div class="col">
+                            <h3>Transacciones Realizadas</h3>
+                        </div>
+                    </div>
+                    
+                    <table class="table table-striped table-dark">
+                        <thead>
+                          <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Id de Transaccion</th>
+                            <th scope="col">Tipo de Transaccion</th>
+                            <th scope="col">Monto de Transaccion</th>
+                            <th scope="col">Fecha</th>
+                          </tr>
+                        </thead>
+                        <tbody *ngFor="let transaccion of transacciones; let i = index;">
+                          <tr>
+                            <th scope="row">{{ i }}</th>
+                            <td>{{ transaccion.id_transaccion}}</td>
+                            <td>{{ transaccion.tipo_transaccion }}</td>
+                            <td>{{ transaccion.monto_transaccion}}</td>
+                            <td>{{transaccion.fecha}}</td>
+                            
+                          </tr>
+                         
+                        </tbody>
+                      </table>
+               
+                <!-- <div *ngFor="let transaccion of transacciones; let i=index;">
+                    
+                        <div class="row">
+                            <label for="">{{transaccion[2].id_transaccion}}</label>
+                        </div>
+    
+                   
+                 
+                        <div class="row">
+                            <label for="">{{ transaccion[1].tipo_transaccion }}</label>
+                        </div>
+                  
+                  
+                        <div class="row">
+                            <label for="">{{ transaccion[1].monto_transaccion }}</label>
+                        </div>
+               
+                   
+                        <div class="row">
+                            <label for="">{{ transaccion[1].fecha }}</label>
+                        </div>
+    
+                   
+
+                </div> -->
+               
+
+
+        
+
+
+            
+           
+            
+           
+            
+            
+            
         </div>
 
     </div>

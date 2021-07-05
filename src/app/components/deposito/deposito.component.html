@@ -1,29 +1,28 @@
 <div class="container">
-    <form action="" style="width: 80%; margin-top: 20px;" [formGroup]="formulario" (ngSubmit)="guardarRetiro()">
+    <form action="" style="width: 80%; margin-top: 20px;">
         <div class="form-group mt-3">
             <div class="row">{{ date }}</div>
             <div class="row">{{ time | date: 'hh:mm:ss a' }}</div>
             
         </div>
-
-     
-       
         <div class="form-group mt-3">
             <label>Numero de tarjeta</label>
             <input type="number" class="form-control" formControlName="numero_tarjeta">
         </div>
+
         <div class="form-group mt-3">
             <label for="">CCV</label>
             <input type="number" class="form-control" >
 
         </div>
+        
         <div class="form-group mt-3">
-            <label for="">Monto a retirar</label>
+            <label for="">Monto a depositar.</label>
             <input type="number" class="form-control" formControlName="monto_transaccion">
         </div>
 
         <div class="form-group mt-3">
-            <button type="submit" class="btn btn-dark">Realizar transacción.</button>
+            <button type="button" class="btn btn-dark">Realizar transacción.</button>
 
         </div>
 

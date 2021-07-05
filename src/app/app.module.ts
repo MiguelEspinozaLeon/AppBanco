@@ -8,6 +8,10 @@ import { AperturaCuentaComponent } from './apertura-cuenta/apertura-cuenta.compo
 import { TransaccionesComponent } from './transacciones/transacciones.component';
 import { RetiroComponent } from './components/retiro/retiro.component';
 import { EstadocuentaComponent } from './components/estadocuenta/estadocuenta.component';
+import { DepositoComponent } from './components/deposito/deposito.component';
+import { TransferenciaComponent } from './components/transferencia/transferencia.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,11 +20,15 @@ import { EstadocuentaComponent } from './components/estadocuenta/estadocuenta.co
     AperturaCuentaComponent,
     TransaccionesComponent,
     RetiroComponent,
-    EstadocuentaComponent
+    EstadocuentaComponent,
+    DepositoComponent,
+    TransferenciaComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule, 
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

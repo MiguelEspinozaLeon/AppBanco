@@ -1,24 +1,26 @@
 <div class="container">
-    <form action="" style="width: 80%; margin-top: 20px;" [formGroup]="formulario" (ngSubmit)="guardarRetiro()">
+    <form action="" style="width: 80%; margin-top: 20px;" [formGroup]="formulario" (ngSubmit)="guardarTransferencia()">
         <div class="form-group mt-3">
             <div class="row">{{ date }}</div>
             <div class="row">{{ time | date: 'hh:mm:ss a' }}</div>
             
         </div>
-
-     
-       
         <div class="form-group mt-3">
-            <label>Numero de tarjeta</label>
-            <input type="number" class="form-control" formControlName="numero_tarjeta">
+            <label>Numero de tarjeta origen</label>
+            <input type="number" class="form-control" formControlName="numero_tarjeta_origen">
         </div>
         <div class="form-group mt-3">
             <label for="">CCV</label>
-            <input type="number" class="form-control" >
+            <input type="number" class="form-control">
 
         </div>
         <div class="form-group mt-3">
-            <label for="">Monto a retirar</label>
+            <label>Numero de tarjeta destino</label>
+            <input type="number" class="form-control" formControlName="numero_tarjeta_destino">
+        </div>
+        
+        <div class="form-group mt-3">
+            <label for="">Monto a transferir</label>
             <input type="number" class="form-control" formControlName="monto_transaccion">
         </div>
 

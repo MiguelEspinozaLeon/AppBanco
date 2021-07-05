@@ -1,54 +1,42 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { AñadirRetiroModel } from 'src/app/interfaces/añadir-retiro.model';
 import { ServicioApiService } from 'src/app/services/servicio-api.service';
+import { AñadirRetiroModel } from 'src/app/interfaces/añadir-retiro.model';
 
 @Component({
-  selector: 'app-retiro',
-  templateUrl: './retiro.component.html',
-  styleUrls: ['./retiro.component.css']
+  selector: 'app-deposito',
+  templateUrl: './deposito.component.html',
+  styleUrls: ['./deposito.component.css']
 })
-export class RetiroComponent implements OnInit{
-  
+export class DepositoComponent implements OnInit {
   time = new Date();
   rxTime = new Date();
   intervalId;
-numero_transaccion: number;
-date: string;
+  date: string;
 
-
-
-
-formulario: FormGroup;
-  constructor(private service: ServicioApiService, private fb: FormBuilder) {
-   
-    
-   
-   }
- 
-  
+  formulario: FormGroup;
+  constructor(private service: ServicioApiService, private fb: FormBuilder) { }
 
   ngOnInit(): void {
     this.date = new Date().toLocaleDateString()
-    // Using Basic Interval
-    this.intervalId = setInterval(() => {
+     // Using Basic Interval
+     this.intervalId = setInterval(() => {
       this.time = new Date();
     }, 1000);
+
+
     this.formulario = this.fb.group({
       numero_tarjeta: [],
-   
-    monto_transaccion: [],
-   
+      monto_transaccion: []
     });
   }
 
-
-  guardarRetiro(){
+  guardarDeposito(){
     if (this.formulario.status=='VALID'){
       console.log(this.formulario.value);
       const info = this.formulario.value;
      
-      const Retiro: AñadirRetiroModel = {
+      const Deposito: AñadirRetiroModel = {
         numero_tarjeta : info.numero_tarjeta,
        
         monto_transaccion: info.monto_transaccion,
@@ -58,12 +46,12 @@ formulario: FormGroup;
 
 
       }
-      this.service.postRetiro(Retiro).subscribe(res =>{
+      this.service.postDeposito(Deposito).subscribe(res =>{
         
         console.log(res);
       });
 
   }
+  }
 
-}
 }
