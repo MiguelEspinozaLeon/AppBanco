@@ -15,6 +15,7 @@ export class DepositoComponent implements OnInit {
   date: string;
 
   formulario: FormGroup;
+  dato: string;
   constructor(private service: ServicioApiService, private fb: FormBuilder) { }
 
   ngOnInit(): void {
